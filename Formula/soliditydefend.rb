@@ -1,8 +1,8 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  url "https://github.com/BlockSecOps/SolidityDefend/archive/refs/tags/v0.12.6.tar.gz"
-  sha256 "9d3db9f62def4bc1bf30f1847ece49e7e57657730c9189cb07329bbded6b1614"
+  url "https://github.com/BlockSecOps/SolidityDefend/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "e64f393e5d8b88d2e480fde950a6b3fb0204aa878fdd5fa82987adf85cd03421"
   license "MIT OR Apache-2.0"
   head "https://github.com/BlockSecOps/SolidityDefend.git", branch: "main"
 
