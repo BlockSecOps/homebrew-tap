@@ -44,7 +44,7 @@ brew untap BlockSecOps/tap
 
 ## Available Packages
 
-- **soliditydefend** (v0.11.0) - 100 security detectors for Solidity smart contracts
+- **soliditydefend** (v1.3.2) - 100 security detectors for Solidity smart contracts
   - Account Abstraction (ERC-4337) vulnerability detection
   - Flash loan security analysis
   - DeFi protocol security checks
