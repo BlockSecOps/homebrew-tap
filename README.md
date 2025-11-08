@@ -21,7 +21,7 @@ soliditydefend --version
 # Analyze a contract
 soliditydefend contract.sol
 
-# Show all 100 detectors
+# Show all 204 detectors
 soliditydefend --list-detectors
 
 # Filter by severity
@@ -44,12 +44,12 @@ brew untap BlockSecOps/tap
 
 ## Available Packages
 
-- **soliditydefend** (v1.3.2) - 100 security detectors for Solidity smart contracts
+- **soliditydefend** (v1.3.2) - 204 security detectors for Solidity smart contracts
   - Account Abstraction (ERC-4337) vulnerability detection
   - Flash loan security analysis
   - DeFi protocol security checks
   - Oracle manipulation detection
-  - And 90+ more detectors
+  - And 200+ more detectors
 
 ## Requirements
 
