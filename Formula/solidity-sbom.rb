@@ -15,9 +15,6 @@ class SoliditySbom < Formula
     cd "solidity-sbom" do
       system "cargo", "install", *std_cargo_args
     end
-
-    # Install shell completions
-    generate_completions_from_executable(bin/"solidity-sbom", "completions")
   end
 
   test do
