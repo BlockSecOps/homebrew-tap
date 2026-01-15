@@ -4,8 +4,8 @@
 class SoliditySbom < Formula
   desc "Software Bill of Materials (SBOM) generator for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityBOM"
-  url "https://github.com/BlockSecOps/SolidityBOM/releases/download/v0.9.5/solidity-sbom-v0.9.5-source.tar.gz"
-  sha256 "97ba884db6ffa915eaa6a4a53faaf7f28bf9f2f277776665ceffa7ced89f2921"
+  url "https://github.com/BlockSecOps/SolidityBOM/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "dd1009279ac0a40870c3b94c4cfc477599b2e52c508c3f37625ec71a7a459405"
   license "MIT OR Apache-2.0"
   head "https://github.com/BlockSecOps/SolidityBOM.git", branch: "main"
 
