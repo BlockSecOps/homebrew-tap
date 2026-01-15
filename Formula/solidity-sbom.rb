@@ -1,10 +1,11 @@
 # Homebrew Formula for solidity-sbom
-# To install locally for testing: brew install --build-from-source Formula/solidity-sbom.rb
+# For private repo: brew install --HEAD blocksecops/tap/solidity-sbom
+# For public repo:  brew install blocksecops/tap/solidity-sbom
 
 class SoliditySbom < Formula
   desc "Software Bill of Materials (SBOM) generator for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityBOM"
-  url "https://github.com/BlockSecOps/SolidityBOM/archive/refs/tags/v0.9.6.tar.gz"
+  url "https://github.com/BlockSecOps/SolidityBOM/releases/download/v0.9.6/solidity-sbom-v0.9.6-source.tar.gz"
   sha256 "dd1009279ac0a40870c3b94c4cfc477599b2e52c508c3f37625ec71a7a459405"
   license "MIT OR Apache-2.0"
   head "https://github.com/BlockSecOps/SolidityBOM.git", branch: "main"
