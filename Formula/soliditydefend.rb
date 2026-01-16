@@ -1,15 +1,12 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  url "https://github.com/BlockSecOps/SolidityDefend/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.9.3/soliditydefend-v1.9.3-darwin-arm64.tar.gz"
+  sha256 "e4c1edf946d9ac8ad0e5b159a018e7c6e7e7cd28283edb9ea6c26de8fc67282e"
   license "MIT OR Apache-2.0"
-  head "https://github.com/BlockSecOps/SolidityDefend.git", branch: "main"
-
-  depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/soliditydefend")
+    bin.install "soliditydefend"
   end
 
   test do
