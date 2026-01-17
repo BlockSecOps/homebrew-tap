@@ -1,9 +1,9 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.9.4/soliditydefend-v1.9.4-x86_64-apple-darwin.tar.gz"
-  version "1.9.4"
-  sha256 "c8e08d2630fc4ec1438708908ccc749ebfdc6c629b30a0d4eaaebe22794e4852"
+  url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.0/soliditydefend-v1.10.0-x86_64-apple-darwin.tar.gz"
+  version "1.10.0"
+  sha256 "5fc5be8f9a0bfbb4733401162290688939b70d48514dabc61454696a5b57b12f"
   license "MIT OR Apache-2.0"
 
   def install
