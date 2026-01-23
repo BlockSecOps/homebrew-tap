@@ -1,22 +1,22 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  version "1.10.7"
+  version "1.10.8"
   license "MIT OR Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.7/soliditydefend-v1.10.7-darwin-arm64.tar.gz"
-      sha256 "30876e6be80a51d38f32557a7e80ace929f3c9db9089105e149d5c0e833339ba"
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.8/soliditydefend-v1.10.8-darwin-arm64.tar.gz"
+      sha256 "e4fc0a3a7ab9d26ec1eba28cc6d60b923e42a745046dacdc5866406e0f797985"
     else
-      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.7/soliditydefend-v1.10.7-darwin-x86_64.tar.gz"
-      sha256 "e0fd574828ee32a62db24530ee029202c4c1e6499ff999afae6bc30b07c64982"
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.8/soliditydefend-v1.10.8-darwin-x86_64.tar.gz"
+      sha256 "fa999a1190b7322331e64bda063f8ef07ff6b0844861100a40dabebff58454cb"
     end
   end
 
   on_linux do
-    url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.7/soliditydefend-v1.10.7-linux-x86_64.tar.gz"
-    sha256 "a1e37a73607185231700862371c0d3d7184116fc8a6840e30d04a2fe0b81ed1e"
+    url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.8/soliditydefend-v1.10.8-linux-x86_64.tar.gz"
+    sha256 "16d6c1ebb8df9614748ce6ba3e9c1e751c89e1a6dca1e537e1f0c64100574bd5"
   end
 
   def install
