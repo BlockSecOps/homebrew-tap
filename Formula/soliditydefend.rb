@@ -10,13 +10,13 @@ class Soliditydefend < Formula
       sha256 "f8b2f5c101972c2fcbf54df2b7bb89c6ffdc6981047827b5a6c8998343f1d401"
     else
       url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.6/soliditydefend-v1.10.6-darwin-x86_64.tar.gz"
-      sha256 "REPLACE_WITH_ACTUAL_SHA256_X86_64"
+      sha256 "568b92d1837a4e82ca869350653ccaf0515849e32786eade1005a7d3b5f0669d"
     end
   end
 
   on_linux do
     url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.6/soliditydefend-v1.10.6-linux-x86_64.tar.gz"
-    sha256 "REPLACE_WITH_ACTUAL_SHA256_LINUX"
+    sha256 "895259365f8c7a16b0c6944ba0e9bb447d8cbd1e0c95ed9a7c5fa2085fc48c5f"
   end
 
   def install
