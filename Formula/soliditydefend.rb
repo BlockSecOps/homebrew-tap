@@ -1,10 +1,23 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.1/soliditydefend-v1.10.1-x86_64-apple-darwin.tar.gz"
-  version "1.10.1"
-  sha256 "cbc2454ed7f5e0be19ff37bbae8f67631fcd54bf67a801f8d6851bfa8677415f"
+  version "1.10.5"
   license "MIT OR Apache-2.0"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.5/soliditydefend-v1.10.5-darwin-arm64.tar.gz"
+      sha256 "07e458f4268cc8aec7c95a6a9e6a68c2b0a5927f5e8fcc6e8e0c04ec6574fe98"
+    else
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.5/soliditydefend-v1.10.5-darwin-x86_64.tar.gz"
+      sha256 "REPLACE_WITH_ACTUAL_SHA256_X86_64"
+    end
+  end
+
+  on_linux do
+    url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.5/soliditydefend-v1.10.5-linux-x86_64.tar.gz"
+    sha256 "REPLACE_WITH_ACTUAL_SHA256_LINUX"
+  end
 
   def install
     bin.install "soliditydefend"
@@ -12,10 +25,10 @@ class Soliditydefend < Formula
 
   test do
     # Test that the binary runs and shows version
-    assert_match version.to_s, shell_output("#{bin}/soliditydefend --version")
+    assert_match version.to_s, shell_output("#{bin}/soliditydefend --version", 1)
 
     # Test help command
-    assert_match "USAGE", shell_output("#{bin}/soliditydefend --help")
+    assert_match "USAGE", shell_output("#{bin}/soliditydefend --help", 1)
 
     # Create a simple test contract
     (testpath/"test.sol").write <<~EOS
