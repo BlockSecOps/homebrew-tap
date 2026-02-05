@@ -2,32 +2,36 @@
 class Soliditydefend < Formula
   desc "High-performance static analysis security tool for Solidity smart contracts"
   homepage "https://github.com/BlockSecOps/SolidityDefend"
-  version "1.10.12"
+  version "1.10.14"
   license "MIT OR Apache-2.0"
 
   on_macos do
     on_arm do
-      # ARM64 binary not yet available for v1.10.12
-      # ARM Mac users can use Rosetta 2 with x86_64 binary or build from source
-      # TODO: Add darwin-arm64 binary when available
-      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.12/soliditydefend-v1.10.12-darwin-x86_64.tar.gz"
-      sha256 "6d0811f1a6ef9189a11fc7128dea8c3040f8f60c7113603350c3fd87733d8986"
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.14/soliditydefend-v1.10.14-darwin-arm64.tar.gz"
+      sha256 "4cf05f3f323518cd87fa840a0ffad714194f81d3ecec9c82c3cffc3982f739fc"
     end
     on_intel do
-      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.12/soliditydefend-v1.10.12-darwin-x86_64.tar.gz"
-      sha256 "6d0811f1a6ef9189a11fc7128dea8c3040f8f60c7113603350c3fd87733d8986"
+      url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.14/soliditydefend-v1.10.14-darwin-x86_64.tar.gz"
+      sha256 "3e4415a02821a34700cd80778108c93478f2ebc06cb24e68a4f5e0b5857bd10a"
     end
   end
 
   on_linux do
-    url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.12/soliditydefend-v1.10.12-linux-x86_64.tar.gz"
-    sha256 "776175bed357afd99f93e32328cc3d41a14855f3c626ff4ed423cfa3886f1e0d"
+    url "https://github.com/BlockSecOps/SolidityDefend/releases/download/v1.10.14/soliditydefend-v1.10.14-linux-amd64.tar.gz"
+    sha256 "e76f3c90a8785e8e2f063987fbad3a2abbf9dddcf97193a06051dc4568c69f1e"
   end
 
   def install
-    bin.install "soliditydefend"
+    # Install the binary with platform-specific name
+    if Hardware::CPU.arm? && OS.mac?
+      bin.install "soliditydefend-darwin-arm64" => "soliditydefend"
+    elsif Hardware::CPU.intel? && OS.mac?
+      bin.install "soliditydefend-darwin-x86_64" => "soliditydefend"
+    elsif OS.linux?
+      bin.install "soliditydefend-linux-amd64" => "soliditydefend"
+    end
 
-    # Install shell completions
+    # Install shell completions if available
     if File.exist?("completions/soliditydefend.bash")
       bash_completion.install "completions/soliditydefend.bash"
     end
@@ -46,7 +50,7 @@ class Soliditydefend < Formula
 
   test do
     # Test that the binary runs and shows version (outputs to stderr with exit 1)
-    assert_match "soliditydefend 1.10.12", shell_output("#{bin}/soliditydefend --version 2>&1", 1)
+    assert_match "soliditydefend 1.10.14", shell_output("#{bin}/soliditydefend --version 2>&1", 1)
 
     # Test help command (outputs to stderr with exit 1)
     assert_match "Usage:", shell_output("#{bin}/soliditydefend --help 2>&1", 1)
